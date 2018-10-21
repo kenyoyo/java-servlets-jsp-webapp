@@ -1,0 +1,22 @@
+package webapp.deletetodo;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import webapp.todo.TodoService;
+
+@WebServlet(urlPatterns = "/delete-todo.do")
+public class TodoServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse respones)
+			throws ServletException, IOException {
+		TodoService.removeTodo(request.getParameter("todo"));
+		respones.sendRedirect("/todo.do");
+	}
+
+}

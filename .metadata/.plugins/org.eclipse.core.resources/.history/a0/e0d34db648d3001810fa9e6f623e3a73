@@ -1,0 +1,6 @@
+package webapp.todo;
+
+public class TodoService {
+	List<Todo> todoList = new ArrayList()<>;
+
+}

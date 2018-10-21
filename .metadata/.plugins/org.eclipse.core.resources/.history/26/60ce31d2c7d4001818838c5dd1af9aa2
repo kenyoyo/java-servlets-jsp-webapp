@@ -1,0 +1,50 @@
+<%@ include file="../common/header.jspf"%>
+
+<nav role="navigation" class="navbar navbar-default">
+
+	<div class="">
+		<a href="/" class="navbar-brand">Brand</a>
+	</div>
+
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="/list-todos.do">Todos</a></li>
+			<li><a href="https://github.com/kenyoyo">MyGit</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="/logout.do">Logout</a></li>
+		</ul>
+	</div>
+
+</nav>
+
+<div class="container">
+	<H1>Welcome ${name}</H1>
+
+	<caption>Your Todos are</caption>
+	<table class="table table-striped">
+		<thead>
+			<th>Description</th>
+			<th>Category</th>
+			<th>Actions</th>
+		</thead>
+		<tbody>
+			<c:forEach items="${todos}" var="todo">
+				<tr>
+					<td>${todo.getTask()}</td>
+					<td>${todo.getCategory()}</td>
+					<td><a class="btn btn-danger"
+						href="/delete-todo.do?todo=${todo.getTask()}&category=${todo.getCategory()}">Delete</a></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	<p>
+		<font color="red">${errorMessage}</font>
+	</p>
+	<a class="btn btn-success" href="/add-todo.do">Add new todo</a>
+
+</div>
+
+<%@ include file="../common/footer.jspf"%>

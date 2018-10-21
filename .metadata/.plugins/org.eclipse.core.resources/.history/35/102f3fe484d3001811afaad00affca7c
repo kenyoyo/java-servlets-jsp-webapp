@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Todo</title>
+</head>
+<body>
+	<H1>Welcome ${name}<H1>
+	<div>
+		<p>Your todos are:</p>
+		<ol>
+		<c:forEach items="${todos}" var="todo">
+			<li>${todo}</li>
+		</c:forEach>
+		</ol>
+	</div>
+</body>
+</html>

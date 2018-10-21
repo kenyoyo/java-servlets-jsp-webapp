@@ -1,0 +1,14 @@
+package webapp.todo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TodoService {
+	private static List<Todo> todoList = new ArrayList<>();
+	
+	static {
+		todoList.add(new Todo("Have breakfast"));
+		todoList.add(new Todo("Read a book"));
+		todoList.add(new Todo("Going to programming class"));
+	}
+}
